@@ -81,7 +81,7 @@ class ImageClassificationViewController: UIViewController {
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                    return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
-                self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
+                self.classificationLabel.text = "Classificação:\n" + descriptions.joined(separator: "\n")
             }
         }
     }
@@ -96,16 +96,16 @@ class ImageClassificationViewController: UIViewController {
         }
         
         let photoSourcePicker = UIAlertController()
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+        let takePhoto = UIAlertAction(title: "Tirar foto", style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .camera)
         }
-        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+        let choosePhoto = UIAlertAction(title: "Escolher foto", style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .photoLibrary)
         }
         
         photoSourcePicker.addAction(takePhoto)
         photoSourcePicker.addAction(choosePhoto)
-        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        photoSourcePicker.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         
         present(photoSourcePicker, animated: true)
     }
